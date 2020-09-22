@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.top-header {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.top-wrapper {
+  position: fixed;
+  background: rgba(243, 241, 236, 0.8);
+  height: 100px;
+  width: 100vw;
+}
+
+.logo-image {
+  height: 100px;
+  width: 255px;
+  padding: 20px;
+}
