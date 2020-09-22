@@ -5,7 +5,7 @@
 }
 
 .login-wrapper {
-  height: 100vh;
+  height: 800px;
   width: 100vw;
   background-color: #ffffee;
   display: flex;
@@ -78,6 +78,7 @@ a {
   background-color: #fffacd;
   border: 1px solid #f5deb3;
   border-radius: 5px;
+  transition: 0.5s;
 }
 
 .submit-btn:hover {
