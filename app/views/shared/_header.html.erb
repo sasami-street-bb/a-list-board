@@ -1,0 +1,16 @@
+<div class="top-header">
+  <div class="top-wrapper">
+    <div class="left-content">
+      <%= link_to image_tag('alb-logo', class:"logo-image"), "/" %>
+    </div>
+
+    <div class="right-content">
+      <ul class="">
+        <% if user_signed_in? %>
+          <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,34 +1,49 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-<div class="field">
-    <%= f.label :nickname %><br />
-    <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
+<%= render "shared/header"%>
+<div class="signup-wrapper">
+  <div class="left-contents">
+    <div class="signup-title">
+      <h2>Create an Acount</h2>
+      <h5>新規ユーザー登録</h5>
+    </div>
+    <div class="signup-border">
+      <%= image_tag "border.png", class: "signup-border"%>
+    </div>
+    <div class="link-option">
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <div class="signup-form">
+    <%= form_for(resource, as: resource_name, url: new_user_registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
+      <div class="field">
+        <%= f.label :nickname, class: "input-title" %><br />
+        <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname", class: "input-area" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+      <div class="field">
+        <%= f.label :email, class:"input-title" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input-area" %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+      <div class="field">
+        <%= f.label :password, class: "input-title" %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password", class: "input-area" %>
+      </div>
 
-<%= render "devise/shared/links" %>
+      <div class="field">
+        <%= f.label :password_confirmation, class: "input-title" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input-area" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Sign up", class: "submit-btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= render "shared/footer" %>

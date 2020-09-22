@@ -1,0 +1,37 @@
+.signup-wrapper {
+  height: 800px;
+  width: 100vw;
+  background-color: #ffffee;
+  display: flex;
+  justify-content: space-around;
+  font-family: yugothic;
+}
+
+.signup-title {
+  padding-left: 70px;
+}
+
+.signup-title h2 {
+  font-size: 50px;
+  font-weight: normal;
+  color: #444444;
+  letter-spacing: 2px;
+}
+
+.signup-title h5 {
+  font-size: 20px;
+  font-weight: normal;
+  margin: 20px 0 50px;
+  color: #777777;
+}
+
+.signup-border {
+  height: 50px;
+  width: 300px;
+  margin-bottom: 30px;
+  padding-left: 35px;
+}
+
+.signup-form {
+  padding: 200px 100px 0 30px;
+}
