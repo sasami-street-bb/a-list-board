@@ -1,0 +1,34 @@
+<%= render "shared/header" %>
+<div class="top-info">
+  <div class="content-title">
+    <h1 class="title">A - List Board</h1>
+    <h2 class="sub-title">
+      様々なサイトやアプリのアカウント管理をしよう！
+    </h2>
+    <%= image_tag 'human.png', class: "human-image" %>
+  </div>
+  <div class="description">
+    <p class="description-text">
+      どれだけのサイトにアカウントの登録をしたか、覚えていますか？
+    </p>
+    <p class="description-text">
+      一覧で情報を表示することで自身の所有するアカウントの管理をし易くします。
+    </p>
+    <p class="description-text">
+      <span>フリー</span>と<span>サブスクリプション</span>で分けて表示が可能です。
+    </p>
+  </div>
+
+  <%= image_tag 'border.png', class: "border-image" %>
+
+  <div class="link-navi">
+    <h2 class="form-header">
+      さっそくはじめる
+    </h2>
+    <%= image_tag 'bottom-direction.png', class: "direction-image"%>
+    <ul class="link-option">
+      <li class="links"><%= link_to "Log In", new_user_session_path, class: "user-link" %></li>
+      <li class="links"><%= link_to "Sign Up", new_user_registration_path, class: "user-link" %></li>
+    </div>
+  </div>
+</div>
