@@ -4,4 +4,10 @@ class ListsController < ApplicationController
     @lists = List.includes(:user)
   end
 
+  def new
+  end
+
+  def create
+  end
+
 end
