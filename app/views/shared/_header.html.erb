@@ -5,10 +5,17 @@
     </div>
 
     <div class="right-content">
-      <ul class="">
-        <% if user_signed_in? %>
-          <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
-          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <ul class="my-link-navi">
+        <% if user_signed_in? && current_page?(root_path) %>
+          <li class="my-link"><%= link_to "My Board", lists_path, class: "user-nickname" %></li>
+          <li class="my-link"><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <% elsif user_signed_in? && current_page?(lists_path) %>
+          <li class="my-link"><%= link_to "Post a List", "#" , class: "postlist" %></li>
+          <li class="my-link"><%= link_to "My Board", lists_path, class: "user-nickname" %></li>
+          <li class="my-link"><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <% elsif user_signed_in? %>
+          <li class="my-link"><%= link_to current_user.nickname, edit_user_registration_path, class: "user-nickname" %></li>
+          <li class="my-link"><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "logout" %></li>
         <% end %>
       </ul>
     </div>

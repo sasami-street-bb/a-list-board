@@ -15,10 +15,28 @@
   height: 100px;
   width: 100vw;
   z-index: 9;
+  display: flex;
+  justify-content: space-between;
 }
 
 .logo-image {
   height: 100px;
   width: 255px;
   padding: 20px;
+}
+
+.my-link-navi {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 60px 20px 0;
+}
+
+.my-link {
+  margin: 0 30px;
+  font-size: 12px;
+}
+
+.postlist {
+  color: rgb(139, 39, 39);
 }
