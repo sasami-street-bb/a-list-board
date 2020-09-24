@@ -3,11 +3,24 @@
 <div class="my-board">
     <div class="free-board">
       <div class="free-wrapper">
+        <div class="lists">
+            <% @lists.each do |list| %>
+              <% if list.fee == "無料" %>
+                <%= list.title %>
+              <% end %>
+            <% end %>
+        </div>
       </div>
     </div>
 
     <div class="pay-board">
       <div class="pay-wrapper">
+        <div class="lists">
+            <% @lists.each do |list| %>
+              <% if list.fee == "有料" %>
+                <%= list.title %>
+              <% end %>
+            <% end %>
       </div>
     </div>
 </div>
