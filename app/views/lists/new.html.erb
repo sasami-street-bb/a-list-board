@@ -1,0 +1,36 @@
+<%= render "shared/header" %>
+<div class="post-lists">
+  <div class="list-info">
+    <h3 class="info-title">リストを投稿する</h3>
+    <%= form_with model: @list, url: lists_path, local: true do |f| %>
+      <%= render "shared/error_messages", model: f.object %>
+      <div class="content-info">
+        <div class="content-text">タイトル<span class="required">（必須）</span></div>
+        <%= f.text_field :title, class: "title-input" %>
+        </div>
+      </div>
+      <div class="content-info">
+        <div class="content-text">メールアドレス</div>
+        <%= f.email_field :email, class: "email-input" %>
+      </div>
+      <div class="content-info">
+        <div class="content-text">パスワード</div>
+        <%= f.password_field :password, class: "password-input" %>
+      </div>
+      <div class="fee-content">
+        <div class="content-text">料金形態<span class="required">（必須）</span>
+          <label><%= f.radio_button :fee, "free", class: "fee-input" %>無料</label>
+          <label><%= f.radio_button :fee, "paid", class: "fee-input" %>有料</label>
+        </div>
+      </div>
+      <div class="content-info">
+        <div class="content-text">メモ</div>
+        <%= f.text_area :memo, class: "memo-input" %>
+      </div>
+      <ul class="btn-content">
+        <li class="post-box"><%= f.submit "POST", class: "post-btn" %></li>
+        <li class="back-box"><%= link_to "Go Back to My Board", lists_path, class: "back-board-btn" %></li>
+      </ul>
+    <% end %>
+  </div>
+</div>
