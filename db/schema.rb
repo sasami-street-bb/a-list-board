@@ -10,18 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_22_100704) do
+ActiveRecord::Schema.define(version: 2020_09_26_073858) do
 
   create_table "lists", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.string "url"
-    t.string "email"
-    t.string "password"
     t.string "fee", null: false
     t.text "memo"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "encrypted_email"
+    t.string "encrypted_email_iv"
+    t.string "encrypted_password"
+    t.string "encrypted_password_iv"
     t.index ["user_id"], name: "index_lists_on_user_id"
   end
 

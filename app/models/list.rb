@@ -7,5 +7,7 @@ class List < ApplicationRecord
     validates :fee
     validates :user_id
   end
+
+  attr_encrypted :email, :password, key: 'This is a key that is 256 bits!!'
   
 end
