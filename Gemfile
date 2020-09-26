@@ -57,3 +57,5 @@ gem 'devise'
 
 gem 'font-awesome-rails'
 gem 'pry-rails'
+
+gem 'attr_encrypted', '~> 3.1.0'
