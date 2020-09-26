@@ -10,12 +10,17 @@
         </div>
       </div>
       <div class="content-info">
+        <div class="content-text">URL</div>
+          <%= f.text_field :url, class: "url-input" %>
+        </div>
+      </div>
+      <div class="content-info">
         <div class="content-text">メールアドレス</div>
-        <%= f.email_field :email, class: "email-input" %>
+        <%= f.email_field :encrypted_email, class: "email-input" %>
       </div>
       <div class="content-info">
         <div class="content-text">パスワード</div>
-        <%= f.password_field :password, class: "password-input" %>
+        <%= f.password_field :encrypted_password, class: "password-input" %>
       </div>
       <div class="fee-content">
         <div class="content-text">料金形態<span class="required">（必須）</span>

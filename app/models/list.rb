@@ -8,6 +8,7 @@ class List < ApplicationRecord
     validates :user_id
   end
 
-  attr_encrypted :email, :password, key: 'This is a key that is 256 bits!!'
+  attr_encrypted :email, key: 'This is a key that is 256 bits!!'
+  attr_encrypted :password, key: 'This is a key that is 256 bits!!'
   
 end
