@@ -13,9 +13,9 @@
         <%# ログイン状態かつマイボードにいる場合 %>
         <% elsif user_signed_in? && current_page?(lists_path) %>
           <li class="my-link"><%= link_to "Post a List", new_list_path, class: "postlist" %></li>
-          <li class="my-link"><%= link_to "My Board", lists_path, class: "user-nickname" %></li>
+          <li class="my-link"><%= link_to current_user.nickname, edit_user_registration_path, class: "user-nickname" %></li>
           <li class="my-link"><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "logout" %></li>
-        <%# ログインしていない場合 %>
+        <%# ログイン状態で上記条件に当てはまらない場合 %>
         <% elsif user_signed_in? %>
           <li class="my-link"><%= link_to current_user.nickname, edit_user_registration_path, class: "user-nickname" %></li>
           <li class="my-link"><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "logout" %></li>
