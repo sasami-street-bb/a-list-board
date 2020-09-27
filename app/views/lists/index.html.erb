@@ -6,7 +6,7 @@
         <% @lists.each do |list| %>
           <% if list.fee == "free" %>
             <ul class="list-link">
-              <li class="list-text"><%= link_to list.title, "#", class: "list-show-link" %></li>
+              <li class="list-text"><%= link_to list.title, list_path(list.id), class: "list-show-link" %></li>
             </ul>
           <% end %>
         <% end %>
@@ -18,7 +18,9 @@
         <div class="lists">
             <% @lists.each do |list| %>
               <% if list.fee == "paid" %>
-                <%= link_to list.title, "#", class: "list-text" %>
+                <ul class="list-link">
+                  <li class="list-text"><%= link_to list.title, list_path(list.id), class: "list-show-link" %></li>
+                </ul>
               <% end %>
             <% end %>
       </div>

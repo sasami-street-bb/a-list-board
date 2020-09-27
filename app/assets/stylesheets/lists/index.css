@@ -7,18 +7,20 @@
 
 .free-board {
   background-color: rgb(250, 250, 250);
-  height: 80vh;
+  height: 80%;
   width: 50vw;
-  border-radius: 20px;
+  border-radius: 15px;
   margin: 130px 20px 50px 50px;
+  box-shadow: inset 3px 3px 15px rgba(99, 99, 99, 0.164);
 }
 
 .pay-board {
   background-color: rgb(250, 250, 250);
-  height: 80vh;
+  height: 80%;
   width: 50vw;
-  border-radius: 20px;
+  border-radius: 15px;
   margin: 130px 50px 50px 20px;
+  box-shadow: inset 3px 3px 15px rgba(99, 99, 99, 0.164);
 }
 
 .list-link {
@@ -41,6 +43,7 @@
 .list-link:hover {
   /* box-shadow: inset 1px 1px 10px 2px rgba(235, 235, 235, 0.5);
   background-color: rgba(255, 255, 255, 0.301); */
+  bottom: 2px;
   box-shadow:
     0 1.9px 2.5px rgba(78, 78, 78, 0.057),
     0 5px 6.1px rgba(102, 102, 102, 0.076),
