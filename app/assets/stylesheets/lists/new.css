@@ -38,6 +38,23 @@
   letter-spacing: 3px;
 }
 
+.content-text-1 {
+  font-size: 15px;
+  margin-left: 100px;
+  color: #444444;
+  letter-spacing: 3px;
+  display: flex;
+}
+
+.content-text-1 label {
+  display: flex;
+}
+
+.fee-input {
+  margin: 5px;
+  padding: 5px;
+}
+
 .title-input {
   margin-right: 100px;
   width: 300px;
@@ -81,10 +98,6 @@
   border: 1px solid #d6d6d6;
   border-radius: 3px;
   box-shadow: 0 0 8px rgb(223, 223, 223);
-}
-
-.fee-input:checked {
-  animation: ripple 0.2s linear forwards;
 }
 
 .required {

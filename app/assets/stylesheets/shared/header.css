@@ -35,6 +35,16 @@
 .my-link {
   margin: 0 30px;
   font-size: 12px;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.my-link:hover {
+  transform: translateY(-5px);
+}
+
+.my-link:active {
+  transform: translateY(-5.0px);
 }
 
 .postlist {

@@ -6,10 +6,40 @@
         <% @lists.each do |list| %>
           <% if list.fee == "free" %>
             <ul class="list-link">
-              <li class="list-text"><%= link_to list.title, "#", class: "list-show-link" %></li>
+              <li class="list-show-link", id="open"><%= list.title %></li>
             </ul>
           <% end %>
         <% end %>
+        <% @lists.each do |list| %>
+          <% if list.fee == "free" %>
+          <div id="mask" class="mask hidden"></div>
+          <section id="modal" class="modal hidden">
+            <div class="show-contents">
+              <h3 class="show-title"><%= list.title %></h3>
+              <ul class="show-content">
+                <li class="show-text">URL</li>
+                <li class="show-data"><%= list.url %></li>
+              </ul>
+              <ul class="show-content">
+                <li class="show-text">Email</li>
+                <li class="show-data"><%= list.email %></li>
+              </ul>
+              <ul class="show-content">
+                <li class="show-text">Password</li>
+                <li class="show-data"><%= list.password %></li>
+              </ul>
+              <ul class="show-content">
+                <li class="show-text">Memo</li>
+                <li class="show-data"><%= list.memo %></li>
+              </ul>
+            </div>
+          <button id="close" class="close hidden">
+            ×
+          </button>
+          </section>
+          <% end %>
+        <% end %>
+       
       </div>
     </div>
 
@@ -18,9 +48,41 @@
         <div class="lists">
             <% @lists.each do |list| %>
               <% if list.fee == "paid" %>
-                <%= link_to list.title, "#", class: "list-text" %>
+                <ul class="list-link">
+                  <li class="list-show-link", id="open"><%= list.title %></li>
+                </ul>
               <% end %>
             <% end %>
+            <% @lists.each do |list| %>
+              <% if list.fee == "paid" %>
+              <div id="mask" class="mask hidden"></div>
+              <section id="modal" class="modal hidden">
+                <div class="show-contents">
+                  <h3 class="show-title"><%= list.title %></h3>
+                  <ul class="show-content">
+                    <li class="show-text">URL</li>
+                    <li class="show-data"><%= list.url %></li>
+                  </ul>
+                  <ul class="show-content">
+                    <li class="show-text">Email</li>
+                    <li class="show-data"><%= list.email %></li>
+                  </ul>
+                  <ul class="show-content">
+                    <li class="show-text">Password</li>
+                    <li class="show-data"><%= list.password %></li>
+                  </ul>
+                  <ul class="show-content">
+                    <li class="show-text">Memo</li>
+                    <li class="show-data"><%= list.memo %></li>
+                  </ul>
+                </div>
+              <button id="close" class="close hidden">
+                ×
+              </button>
+              </section>
+              <% end %>
+            <% end %>
+        </div>
       </div>
     </div>
 </div>
