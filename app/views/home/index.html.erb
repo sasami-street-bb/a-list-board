@@ -32,6 +32,8 @@
     <ul class="link-option">
       <li class="links"><%= link_to "Log In", new_user_session_path, class: "user-link" %></li>
       <li class="links"><%= link_to "Sign Up", new_user_registration_path, class: "user-link" %></li>
+      <li><%= link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, method: :post%></li>
+      <li><%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post%></li>
     </div>
   </div>
 </div>
