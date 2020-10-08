@@ -3,6 +3,9 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.includes(:user)
+
+    @wd = ["日", "月", "火", "水", "木", "金", "土"]
+    @time = Time.now
   end
 
   def new
@@ -16,6 +19,13 @@ class ListsController < ApplicationController
       redirect_to lists_path
     else
       render :new
+    end
+  end
+
+  def destroy
+    list = List.find(params[:id])
+    if list.destroy
+      redirect_to lists_path
     end
   end
 
