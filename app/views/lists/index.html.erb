@@ -1,19 +1,19 @@
 <%= render "shared/header" %>
 
 <div class="my-board">
-    <div class="free-board">
-      <div class="lists">
-        <% @lists.each do |list| %>
-          <% if list.fee == "free" %>
-            <ul class="list-link">
-              <li class="list-show-link", id="open"><%= list.title %></li>
-            </ul>
-          <% end %>
-        <% end %>
-        <% @lists.each do |list| %>
-          <% if list.fee == "free" %>
-          <div id="mask" class="mask hidden"></div>
+  <div class="free-board">
+    <div class="lists">
+      <% @lists.each do |list| %>
+        <% if list.fee == "free" %>
+          <ul class="list-link">
+            <li class="list-show-link", id="open", data-num="<%= list.id %>"><%= list.title %></li>
+            <li class="list-show-link", id="delet-btn"><%= link_to "削除", list_path(list.id), method: :delete, class: "list-delete-link", data: { confirm: "本当に削除しますか？",
+            cancel: "CANCEL",
+            commit: "OK" }, title: "Delete a LIST" %></li>
+          </ul>
           <section id="modal" class="modal hidden">
+          <div id="mask" class="mask hidden"></div>
+          <div id="modal-wrapper">
             <div class="show-contents">
               <h3 class="show-title"><%= list.title %></h3>
               <ul class="show-content">
@@ -33,56 +33,65 @@
                 <li class="show-data"><%= list.memo %></li>
               </ul>
             </div>
-          <button id="close" class="close hidden">
-            ×
-          </button>
-          </section>
-          <% end %>
+            <div class="list-show-delete-link">
+              <%= link_to "削除", list_path(list.id), method: :delete, class: "list-delete-link", data: { confirm: "本当に削除しますか？",
+              cancel: "キャンセル",
+              commit: "削除する" }, title: "DELETE LIST？" %>
+            </div>
+            <button id="close" class="close">
+              ×
+            </button>
+          </div>
+        </section>
         <% end %>
-       
-      </div>
+      <% end %>
     </div>
+  </div>
 
-    <div class="pay-board">
-      <div class="pay-wrapper">
-        <div class="lists">
-            <% @lists.each do |list| %>
-              <% if list.fee == "paid" %>
-                <ul class="list-link">
-                  <li class="list-show-link", id="open"><%= list.title %></li>
-                </ul>
-              <% end %>
-            <% end %>
-            <% @lists.each do |list| %>
-              <% if list.fee == "paid" %>
-              <div id="mask" class="mask hidden"></div>
-              <section id="modal" class="modal hidden">
-                <div class="show-contents">
-                  <h3 class="show-title"><%= list.title %></h3>
-                  <ul class="show-content">
-                    <li class="show-text">URL</li>
-                    <li class="show-data"><%= list.url %></li>
-                  </ul>
-                  <ul class="show-content">
-                    <li class="show-text">Email</li>
-                    <li class="show-data"><%= list.email %></li>
-                  </ul>
-                  <ul class="show-content">
-                    <li class="show-text">Password</li>
-                    <li class="show-data"><%= list.password %></li>
-                  </ul>
-                  <ul class="show-content">
-                    <li class="show-text">Memo</li>
-                    <li class="show-data"><%= list.memo %></li>
-                  </ul>
-                </div>
-              <button id="close" class="close hidden">
-                ×
-              </button>
-              </section>
-              <% end %>
-            <% end %>
-        </div>
-      </div>
+  <div class="pay-board">
+    <div class="lists">
+      <% @lists.each do |list| %>
+        <% if list.fee == "paid" %>
+          <ul class="list-link">
+            <li class="list-show-link", id="open"><%= list.title %></li>
+            <li class="list-show-link", id="delet-btn"><%= link_to "削除", list_path(list.id), method: :delete, class: "list-delete-link", data: { confirm: "本当に削除しますか？",
+            cancel: "CANCEL",
+            commit: "OK" }, title: "Delete a LIST" %></li>
+          </ul>
+          <section id="modal" class="modal hidden">
+          <div id="mask" class="mask hidden"></div>
+          <div id="modal-wrapper">
+            <div class="show-contents">
+              <h3 class="show-title"><%= list.title %></h3>
+              <ul class="show-content">
+                <li class="show-text">URL</li>
+                <li class="show-data"><%= list.url %></li>
+              </ul>
+              <ul class="show-content">
+                <li class="show-text">Email</li>
+                <li class="show-data"><%= list.email %></li>
+              </ul>
+              <ul class="show-content">
+                <li class="show-text">Password</li>
+                <li class="show-data"><%= list.password %></li>
+              </ul>
+              <ul class="show-content">
+                <li class="show-text">Memo</li>
+                <li class="show-data"><%= list.memo %></li>
+              </ul>
+            </div>
+            <div class="list-show-delete-link">
+              <%= link_to "削除", list_path(list.id), method: :delete, class: "list-delete-link", data: { confirm: "本当に削除しますか？",
+              cancel: "キャンセル",
+              commit: "削除する" }, title: "DELETE LIST？" %>
+            </div>
+            <button id="close" class="close">
+              ×
+            </button>
+          </div>
+        </section>
+        <% end %>
+      <% end %>
     </div>
+  </div>
 </div>

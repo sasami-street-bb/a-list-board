@@ -59,5 +59,7 @@ gem 'font-awesome-rails'
 gem 'pry-rails'
 
 gem 'attr_encrypted', '~> 3.1.0'
+gem 'bootstrap-sass'
+gem 'data-confirm-modal'
 
 gem 'jquery-rails'

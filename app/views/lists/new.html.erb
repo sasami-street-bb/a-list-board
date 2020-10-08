@@ -7,12 +7,10 @@
       <div class="content-info">
         <div class="content-text">タイトル<span class="required">（必須）</span></div>
         <%= f.text_field :title, class: "title-input" %>
-        </div>
       </div>
       <div class="content-info">
         <div class="content-text">URL</div>
           <%= f.text_field :url, class: "url-input" %>
-        </div>
       </div>
       <div class="content-info">
         <div class="content-text">メールアドレス</div>
@@ -23,10 +21,9 @@
         <%= f.password_field :password, class: "password-input" %>
       </div>
       <div class="fee-content">
-        <div class="content-text-1">料金形態<span class="required">（必須）</span>
+        <div class="content-text-1">料金形態<span class="required">（必須）</span></div>
           <label><%= f.radio_button :fee, "free", class: "fee-input" %>無料</label>
           <label><%= f.radio_button :fee, "paid", class: "fee-input" %>有料</label>
-        </div>
       </div>
       <div class="content-info">
         <div class="content-text">メモ</div>
