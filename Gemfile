@@ -62,4 +62,8 @@ gem 'attr_encrypted', '~> 3.1.0'
 gem 'bootstrap-sass'
 gem 'data-confirm-modal'
 
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
+
 gem 'jquery-rails'
