@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: a_list_board_production
-  username: a_list_board
-  password: <%= ENV['A_LIST_BOARD_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
