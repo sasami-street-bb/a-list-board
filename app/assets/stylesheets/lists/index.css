@@ -76,19 +76,62 @@
   color: rgb(68, 68, 68);
 }
 
-.list-delete-link {
+
+
+
+/* 編集・削除のドロップダウン */
+
+.menu {
   margin: 0 0 0 auto;
-  font-size: 8px;
-  padding: 7px;
+  display: block;
+  padding: 20px;
+  width: 10px;
+}
+
+.menu-title {
   color: rgb(204, 204, 204);
+  position: relative;
+  font-size: 8px;
+}
+
+.sub-menu {
+  display: none;
+}
+
+.sub-menu ul {
+  list-style: none;
+  width: 30px;
+  position: absolute;
+}
+
+.sub-menu li {
+  border: 1px solid lightgray;
+  border-radius: 2px;
+  background-color: white;
+  font-size: 5px;
+  padding: 8px;
+  width: 40px;
+  position: relative;
+  color: grey;
+  text-decoration: none;
+  z-index: 5;
+}
+
+.sub-menu li:hover {
+  background-color: rgb(237, 237, 237);
+}
+
+.menu:hover .sub-menu {
+  display: block;
 }
 
 
 
 
-/* 以下詳細モーダル */
 
-#modal {
+/* 詳細・編集モーダル */
+
+#modal, #edit-modal {
   display: none;
   position: fixed;
   z-index: 10;
@@ -98,13 +141,17 @@
   height: 100%;
 }
 
-#mask {
+#edit-modal {
+  z-index: 100;
+}
+
+#mask, #edit-mask {
   width: 100%;
   height: 100%;
   background-color: rgba(30,30,30,0.9);
 }
 
-#modal-wrapper {
+#modal-wrapper, #edit-modal-wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -143,10 +190,11 @@
 
 #modal .show-data {
   display: inline-block;
-  width: 10px;
+  width: 300px;
   font-size: 13px;
   margin: 0 auto;
   text-align: left;
+  word-wrap: break-word;
 }
 
 #modal .close {
@@ -157,4 +205,13 @@
   background-color: white;
   padding: 3px;
   outline: none;
+}
+
+.list-show-action-links {
+  display: flex;
+  float: right;
+}
+
+.list-show-action-link {
+  margin: 0 10px;
 }

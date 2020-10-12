@@ -5,7 +5,7 @@
 //   const masks = document.querySelectorAll('.mask');
 //   console.log(masks)
 //   console.log(modals)
-
+//   let i = 0
 // opens.forEach( function(value){
 //   var modal = modals[i]
 //     var mask = masks[i]
@@ -32,80 +32,23 @@
 
 
 
-
-// $(window).on('load', function(){
-//   let i = 0
-//   $(".list-link").each(function(value){
-//     var modal = $(".modal")[i];
-//     var mask = $(".mask")[i];
-//     var close = $(".close")[i];
-//     // console.log(modal);
-//     i = i + 1;
-//     $(".list-link").on('click', function(){
-//       $(".modal").removeClass('hidden');
-//       $(".mask").removeClass('hidden');
-//       $(".close").on('click', function(){
-//         $(".modal").addClass('hidden');
-//         $(".mask").addClass('hidden');
-//       });
-//       $(".mask").on('click', function(){
-//         $(".modal").addClass('hidden');
-//         $(".mask").addClass('hidden');
-//       });
-//     });
-//   });
-// });
-
-
-
-
-
-
-// $(function () {
-//   var i = 0;
-//   $(".list-link").each(function(value){
-//     var modal = $('#modal')[i];
-//     var mask = $('#mask')[i];
-//     var close = $('#close')[i];
-//     i = i + 1;
-//   });
-//     $(value).on('click', function(){
-//         $('#modal').fadeIn();
-//     });
-//     $('#close, #mask').on('click', function(){
-//       $('#modal').fadeOut();
-//     });
-  
-// });
-
-
-// $(function(){
-//   // $(".list-link").each(function(){
-//     $(".list-link").on('click', function(){
-//       // let num = $(this).data('num');
-//       // var modal = document.getElementById(num);
-//       $('#modal').fadeIn();
-//       // return false;
-//     });
-//   // });
-//   $('#close, #mask').on('click', function(){
-//     $('#modal').fadeOut();
-//     // return false;
-//   });
-// });
-
-// $(function(){
+// 詳細モーダル
 $(document).on("click", ".list-link", function(e){
   e.preventDefault();
-  $(this).next().delay(500).fadeIn();
+  $(this).next().delay(300).fadeIn();
 });
 $(document).on("click",".close, .mask", function(e){
   e.preventDefault;
   $(".modal").fadeOut();
 });
-// });
 
-// $('.close, #mask').on("click", function(){
-//   $('#modal').fadeOut();
-// });
-// });
+// 編集モーダル
+$(document).on("click", '.list-edit-link', function(e){
+  e.preventDefault();
+  $('.modal').fadeOut();
+  $('.edit-modal').next().delay(500).fadeIn();
+});
+$(document).on("click",".close, .mask", function(e){
+  e.preventDefault;
+  $(".edit-modal").fadeOut();
+});
