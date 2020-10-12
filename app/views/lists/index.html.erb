@@ -6,14 +6,42 @@
       <% @lists.each do |list| %>
         <% if list.fee == "free" %>
           <ul class="list-link">
-            <li class="list-show-link", id="open", data-num="<%= list.id %>"><%= list.title %></li>
-            <li class="list-show-link", id="delet-btn"><%= link_to "削除", list_path(list.id), method: :delete, class: "list-delete-link", data: { confirm: "本当に削除しますか？",
-            cancel: "CANCEL",
-            commit: "OK" }, title: "Delete a LIST" %></li>
+            <li class="list-show-link", id="open"><%= list.title %></li>
+            <li class="menu">
+              <div class="menu-title">•••</div>
+              <div class="sub-menu">
+                <ul>
+                  <li id="edit-btn"><%= link_to "編集", edit_list_path(list.id), method: :get ,class: "list-edit-link" %> 編集</li>
+                  <li id="delet-btn"><%= link_to "削除", list_path(list.id), method: :delete, class: "text-secondary list-delete-link", data: { confirm: "本当に削除しますか？",
+                  cancel: "CANCEL",
+                  commit: "OK" }, title: "Delete a LIST" %></li>
+                </ul>
+              </div>
+            </li>
           </ul>
           <section id="modal" class="modal hidden">
           <div id="mask" class="mask hidden"></div>
           <div id="modal-wrapper">
+            <div class="list-show-action-links">
+              <div class="list-show-action-link">
+                <%= link_to edit_list_path(list.id), method: :get ,class: "list-edit-link" do %>
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                  </svg>
+                <% end %>
+              </div>
+              <div class="list-show-action-link">
+                <%= link_to list_path(list.id), method: :delete, class: "list-delete-link", data: { confirm: "本当に削除しますか？",
+                cancel: "キャンセル",
+                commit: "削除する" }, title: "DELETE LIST？" do %>
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                  </svg>
+                <% end %>
+              </div>
+            </div>
             <div class="show-contents">
               <h3 class="show-title"><%= list.title %></h3>
               <ul class="show-content">
@@ -33,16 +61,48 @@
                 <li class="show-data"><%= list.memo %></li>
               </ul>
             </div>
-            <div class="list-show-delete-link">
-              <%= link_to "削除", list_path(list.id), method: :delete, class: "list-delete-link", data: { confirm: "本当に削除しますか？",
-              cancel: "キャンセル",
-              commit: "削除する" }, title: "DELETE LIST？" %>
-            </div>
             <button id="close" class="close">
               ×
             </button>
           </div>
-        </section>
+          </section>
+
+          <section id="edit-modal" class="edit-modal hidden">
+            <div id="edit-mask" class="mask hidden"></div>
+            <div id="edit-modal-wrapper">
+              <%= form_with(model: @list, local: true) do |f| %>
+              <div class="show-content">
+                <div class="show-text">タイトル<span class="required">（必須）</span></div>
+                <%= f.text_field :title, class: "title-input" %>
+              </div>
+              <div class="show-content">
+                <div class="show-text">URL</div>
+                <%= f.text_field :url, class: "url-input" %>
+              </div>
+              <div class="show-content">
+                <div class="show-text">メールアドレス</div>
+                <%= f.email_field :email, class: "email-input" %>
+              </div>
+              <div class="show-content">
+                <div class="show-text">パスワード</div>
+                <%= f.password_field :password, class: "password-input" %>
+              </div>
+              <div class="fee-content">
+                <div class="content-text-1">料金形態<span class="required">（必須）</span></div>
+                  <label><%= f.radio_button :fee, "free", class: "fee-input" %>無料</label>
+                  <label><%= f.radio_button :fee, "paid", class: "fee-input" %>有料</label>
+              </div>
+              <div class="show-content">
+                <div class="show-text">メモ</div>
+                <%= f.text_area :memo, class: "memo-input" %>
+              </div>
+              <% end %>
+              <button id="close" class="close">
+                ×
+              </button>
+            </div>
+          </section>
+
         <% end %>
       <% end %>
     </div>
@@ -54,13 +114,41 @@
         <% if list.fee == "paid" %>
           <ul class="list-link">
             <li class="list-show-link", id="open"><%= list.title %></li>
-            <li class="list-show-link", id="delet-btn"><%= link_to "削除", list_path(list.id), method: :delete, class: "list-delete-link", data: { confirm: "本当に削除しますか？",
-            cancel: "CANCEL",
-            commit: "OK" }, title: "Delete a LIST" %></li>
+            <div class="menu">
+              <div class="menu-title">•••</div>
+              <div class="sub-menu">
+                <ul>
+                  <li id="edit-btn"><%= link_to "編集", edit_list_path(list.id), method: :get ,class: "list-edit-link" %> 編集</li>
+                  <li id="delet-btn"><%= link_to "削除", list_path(list.id), method: :delete, class: "list-delete-link", data: { confirm: "本当に削除しますか？",
+                  cancel: "CANCEL",
+                  commit: "OK" }, title: "Delete a LIST" %></li>
+                </ul>
+              </div>
+            </div>
           </ul>
           <section id="modal" class="modal hidden">
           <div id="mask" class="mask hidden"></div>
           <div id="modal-wrapper">
+            <div class="list-show-action-links">
+              <div class="list-show-action-link">
+                <%= link_to edit_list_path(list.id), method: :get ,class: "list-edit-link" do %>
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                  </svg>
+                <% end %>
+              </div>
+              <div class="list-show-action-link">
+                <%= link_to list_path(list.id), method: :delete, class: "list-delete-link", data: { confirm: "本当に削除しますか？",
+                cancel: "キャンセル",
+                commit: "削除する" }, title: "DELETE LIST？" do %>
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                  </svg>
+                <% end %>
+              </div>
+            </div>
             <div class="show-contents">
               <h3 class="show-title"><%= list.title %></h3>
               <ul class="show-content">
@@ -79,11 +167,6 @@
                 <li class="show-text">Memo</li>
                 <li class="show-data"><%= list.memo %></li>
               </ul>
-            </div>
-            <div class="list-show-delete-link">
-              <%= link_to "削除", list_path(list.id), method: :delete, class: "list-delete-link", data: { confirm: "本当に削除しますか？",
-              cancel: "キャンセル",
-              commit: "削除する" }, title: "DELETE LIST？" %>
             </div>
             <button id="close" class="close">
               ×
