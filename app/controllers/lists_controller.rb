@@ -3,9 +3,6 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.includes(:user)
-
-    @wd = ["日", "月", "火", "水", "木", "金", "土"]
-    @time = Time.now
   end
 
   def new
@@ -13,7 +10,6 @@ class ListsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @list = List.new(list_params)
     if @list.save
       redirect_to lists_path
@@ -26,6 +22,19 @@ class ListsController < ApplicationController
     list = List.find(params[:id])
     if list.destroy
       redirect_to lists_path
+    end
+  end
+
+  def edit
+    @list = List.find(params[:id])
+  end
+
+  def update
+    list = List.find(params[:id])
+    if list.update(list_params)
+      redirect_to lists_path
+    else
+      render :edit
     end
   end
 

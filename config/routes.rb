@@ -4,5 +4,5 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root to: "home#index"
-  resources :lists, only: [:index, :new, :create, :destroy, :edit, :update]
+  resources :lists, only: [:index, :new, :create, :destroy, :update, :edit]
 end
