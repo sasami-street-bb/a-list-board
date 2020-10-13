@@ -85,3 +85,62 @@ a {
   background-color: #f5deb3;
   color: white;
 }
+
+.sns-login {
+  list-style: none;
+  margin-top: 50px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.fab {
+  margin: 10px 0;
+  padding: 10px;
+  color: white;
+}
+
+.fab:hover {
+  opacity: 0.9;
+}
+
+.fa-facebook-square {
+  border: 1px solid rgb(59, 89, 152);
+  background-color: rgb(59, 89, 152);
+  border-radius: 5px;
+  box-shadow: 0 3px rgb(34, 50, 84);
+  position: relative;
+  text-decoration: none;
+}
+
+.fa-facebook-square:active {
+  top: 3px;
+  box-shadow: none;
+}
+
+.fb-login {
+  margin-left: 10px;
+  font-family: 'san francisco';
+  color: white;
+  font-weight: bolder;
+}
+
+.fa-google {
+  border: 1px solid rgb(219, 68, 55);
+  background-color: rgb(219, 68, 55);
+  border-radius: 5px;
+  box-shadow: 0 3px rgb(125, 39, 32);
+  position: relative;
+}
+
+.fa-google:active {
+  top: 3px;
+  box-shadow: none;
+}
+
+.google-login {
+  margin-left: 10px;
+  font-family: roboto;
+  color: white;
+  font-weight: bold;
+}

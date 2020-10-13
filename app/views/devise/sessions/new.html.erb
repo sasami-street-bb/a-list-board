@@ -36,8 +36,10 @@
         <%= f.submit "Log In", class: "submit-btn" %>
       </div>
     <% end %>
-    <%= link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post%>
-    <%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post%>
+    <ul class="sns-login">
+      <li class="fab fa-facebook-square"><%= link_to 'Facebookでログイン', user_facebook_omniauth_authorize_path, method: :post, class: "fb-login text-white" %></li>
+      <li class="fab fa-google"><%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post, class: "google-login text-white" %></li>
+    </ul>
   </div>
 </div>
 <%= render "shared/footer"%>

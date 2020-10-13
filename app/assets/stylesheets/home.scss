@@ -9,11 +9,18 @@ a {
 }
 
 .top-info {
-  background-color: #ffffee;
+  // background-color: #ffffee;
+  background:  url('post-it-min.jpg');
+  background-size: cover;
+  background-position: 30% -35%;
   height: 100%;
   width: 100vw;
   font-family: yugothic;
   text-align: center;
+  // padding: 150px 0 0 0;
+}
+.bg-wrapper {
+  background: linear-gradient(-135deg,  #ffffed,#ffe7cdd3);
   padding: 150px 0 0 0;
 }
 

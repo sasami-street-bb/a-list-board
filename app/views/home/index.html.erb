@@ -3,6 +3,7 @@
 </header>
 
 <div class="top-info">
+<div class="bg-wrapper">
   <div class="content-title">
     <h1 class="title">A - List Board</h1>
     <h2 class="sub-title">
@@ -28,14 +29,13 @@
     <h2 class="form-header">
       さっそくはじめる
     </h2>
-    <%= image_tag 'bottom-direction.png', class: "direction-image"%>
+    <%# <%= image_tag 'bottom-direction.png', class: "direction-image"%>
     <ul class="link-option">
       <li class="links"><%= link_to "Log In", new_user_session_path, class: "user-link" %></li>
       <li class="links"><%= link_to "Sign Up", new_user_registration_path, class: "user-link" %></li>
-      <li><%= link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, method: :post%></li>
-      <li><%= link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post%></li>
-    </div>
+    </ul>
   </div>
+</div>
 </div>
 <footer>
   <%= render "shared/footer" %>
