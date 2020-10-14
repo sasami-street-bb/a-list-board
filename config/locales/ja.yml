@@ -1,0 +1,8 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       nickname: ニックネーム
+     list:
+       title: タイトル
+       fee: 料金形態

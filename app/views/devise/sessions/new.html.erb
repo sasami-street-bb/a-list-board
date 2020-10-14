@@ -14,8 +14,11 @@
   </div>
 
   <div class="login-form">
+  <div class='login-flash-message'>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+  </div>
     <%= form_with model: @user, url:user_session_path, local: true do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
       
       <div class="field">
         <%= f.label :email, class: "input-title" %><br />
