@@ -5,12 +5,34 @@
 }
 
 .login-wrapper {
-  height: 800px;
+  height: 900px;
   width: 100vw;
-  background-color: #ffffee;
+  /* background-color: #ffffee; */
   display: flex;
   justify-content: space-around;
-  font-family: yugothic;
+  font-family: KotoriRose-Regular;
+  background: linear-gradient(270deg, #f8e1b3c5, #fffce9aa);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 10s ease infinite;
+  -moz-animation: AnimationName 10s ease infinite;
+  animation: AnimationName 10s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
 a {
@@ -30,6 +52,7 @@ a {
   font-weight: normal;
   color: #444444;
   letter-spacing: 2px;
+  font-family: KotoriRose-Bold;
 }
 
 .login-title h5 {
@@ -37,6 +60,7 @@ a {
   font-weight: normal;
   margin: 20px 0 50px;
   color: #777777;
+  font-family: Mamelon-3HiRegular;
 }
 
 .login-border {
@@ -82,7 +106,7 @@ a {
 }
 
 .submit-btn:hover {
-  background-color: #f5deb3;
+  background-color: #efc16b;
   color: white;
 }
 
@@ -101,16 +125,31 @@ a {
 }
 
 .fab:hover {
-  opacity: 0.9;
+  transition: 0.5s;
 }
 
-.fa-facebook-square {
+/* .fa-facebook-square {
   border: 1px solid rgb(59, 89, 152);
   background-color: rgb(59, 89, 152);
   border-radius: 5px;
   box-shadow: 0 3px rgb(34, 50, 84);
   position: relative;
   text-decoration: none;
+} */
+
+.fa-facebook-square {
+  border: 1px solid rgb(102, 129, 188);
+  background-color: rgb(124, 150, 205);
+  border-radius: 5px;
+  box-shadow: 0 3px rgb(62, 91, 154);
+  position: relative;
+  text-decoration: none;
+}
+
+.fa-facebook-square:hover {
+  border: 1px solid rgb(59, 89, 152);
+  background-color: rgb(59, 89, 152);
+  box-shadow: 0 3px rgb(34, 50, 84);
 }
 
 .fa-facebook-square:active {
@@ -125,12 +164,26 @@ a {
   font-weight: bolder;
 }
 
-.fa-google {
+/* .fa-google {
   border: 1px solid rgb(219, 68, 55);
   background-color: rgb(219, 68, 55);
   border-radius: 5px;
   box-shadow: 0 3px rgb(125, 39, 32);
   position: relative;
+} */
+
+.fa-google {
+  border: 1px solid rgb(246, 158, 150);
+  background-color: rgb(232, 128, 118);
+  border-radius: 5px;
+  box-shadow: 0 3px rgb(219, 109, 99);
+  position: relative;
+}
+
+.fa-google:hover {
+  border: 1px solid rgb(219, 68, 55);
+  background-color: rgb(219, 68, 55);
+  box-shadow: 0 3px rgb(125, 39, 32);
 }
 
 .fa-google:active {

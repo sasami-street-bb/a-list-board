@@ -9,50 +9,79 @@ a {
 }
 
 .top-info {
-  // background-color: #ffffee;
-  background:  url('post-it-min.jpg');
+  background-image:  image-url('post-it-min.jpg');
   background-size: cover;
-  background-position: 30% -35%;
-  height: 100%;
+  background-position: 30% 500px;
+  max-height: 100%;
   width: 100vw;
-  font-family: yugothic;
+  font-family: 超極細ゴシック;
   text-align: center;
-  // padding: 150px 0 0 0;
+  color: black;
 }
 .bg-wrapper {
-  background: linear-gradient(-135deg,  #ffffed,#ffe7cdd3);
+  // background: linear-gradient(-135deg,  #ffffed,#ffe7cdd3);
   padding: 150px 0 0 0;
+  background: linear-gradient(270deg, #fffce9c5, #fffad5f6);
+  background-size: 400% 400%;
+  -webkit-animation: AnimationName 10s ease infinite;
+  -moz-animation: AnimationName 10s ease infinite;
+  animation: AnimationName 10s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
 .title {
-  color: #444444;
-  font-family: 'comic sans ms';
-  font-size: 50px;
+  color: #444444be;
+  font-family: gellosia_font;
+  // font-family: KotoriRose-Bold;
+  font-size: 60px;
   margin-top: 40px;
+  letter-spacing: 8px;
+  // font-weight: bold;
+}
+
+.title span {
+  color: #676767;
+  // font-family: 'lumos thin';
+  // font-family: 'buffalord demo gradient';
+  font-size: 80px;
 }
 
 .sub-title {
-  color: #777777;
+  color: #696969;
   font-weight: normal;
-  font-size: 23px;
-  margin-top: 60px;
+  font-size: 20px;
+  margin-top: 130px;
 }
 
 .human-image {
-  margin-top: 100px;
+  margin-top: 150px;
   width: 600px;
 }
 
 .description {
   text-align: center;
-  margin-top: 130px;
-  margin-bottom: 100px;
+  margin-top: 300px;
+  margin-bottom: 250px;
 }
 
 .description-text {
-  color: #999999;
   font-size: 15px;
-  margin: 40px;
+  margin: 90px;
 }
 
 .description-text span {
@@ -61,17 +90,15 @@ a {
 
 .link-navi {
   margin-top: 100px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .form-header {
-  color: #777777;
   text-align: center;
   font-weight: normal;
   font-size: 20px;
   letter-spacing: 2px;
-  padding-bottom: 30px;
-  font-family: arial;
+  padding: 80px 0;
 }
 
 .link-option {
@@ -107,12 +134,12 @@ a {
   justify-content: center;
   align-items: center;
   letter-spacing: 3px;
-  font-family: sans-serif;
+  font-family: KotoriRose-Regular;
   transition: 0.5s;
 }
 
 .user-link:hover {
-  background-color: #f5deb3;
+  background-color: #efc16b;
   color: white;
 }
 

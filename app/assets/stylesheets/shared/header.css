@@ -11,7 +11,7 @@
 
 .top-wrapper {
   position: fixed;
-  background: rgba(243, 241, 236, 0.8);
+  background: linear-gradient(rgba(255, 252, 246, 0.5), rgba(243, 241, 236, 0));
   height: 100px;
   width: 100vw;
   z-index: 9;
