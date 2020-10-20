@@ -1,0 +1,185 @@
+/* user infoページ */
+
+.user-edit {
+  height: 100%;
+  width: 100vw;
+  /* background-color: rgb(214, 228, 232); */
+  background: #abbaab;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fff9f1, #e1e7e1);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fff9f1, #e1e7e1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.user-edit-top-wrapper {
+  padding: 200px 0 0;
+}
+
+.user-edit-main-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.user-edit-title h1 {
+  font-size: 30px;
+  font-family: KotoriRose-Bold;
+  color: #444444;
+}
+
+.user-edit-subtitle h4 {
+  font-family: Mamelon-3HiRegular;
+  margin-top: 20px;
+  color: #777777;
+}
+
+.user-edit-name {
+  padding: 50px 0;
+}
+
+.user-name-text {
+  margin: 20px 0;
+}
+
+.user-name {
+  margin: 7px;
+  font-size: 14px;
+}
+
+.user-edit-forms {
+}
+
+.user-edit-field {
+  margin: 30px 0;
+}
+
+.user-edit-text {
+  font-family: KotoriRose-Regular;
+  color: #585858;
+}
+
+.user-edit-text span {
+  font-size: 10px;
+  font-family: Mamelon-3HiRegular;
+}
+
+.user-edit-input {
+  margin: 10px 0;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+}
+
+.user-edit-btn {
+  padding: 12px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  background-color: rgba(120, 166, 120, 0.792);
+  color: white;
+}
+
+.user-edit-btn:hover {
+  background-color: rgb(114, 166, 114);
+}
+
+.user-edit-del {
+  text-align: center;
+  padding: 150px 0 100px;
+  font-family: KotoriRose-Regular;
+}
+
+.user-edit-del h3 {
+  margin: 20px 0 50px;
+}
+
+.user-edit-del p {
+  margin: 20px 0;
+  font-size: 12px;
+  font-family: Mamelon-3HiRegular;
+}
+
+.user-edit-del-btn {
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  background-color: gray;
+  color: white;
+}
+
+.user-edit-del-btn:hover {
+  background-color: rgb(96, 96, 96);
+}
+
+.user-edit-back-link {
+  margin: 80px 0;
+}
+
+
+
+
+
+
+
+
+/* password forgotページ */
+
+.password-forgot {
+  height: 100%;
+  width: 100vw;
+  font-family: KotoriRose-Regular;
+  background: #ddd6f3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #fff2e1, #fffceb);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #fff2e1, #fffceb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.forgot-wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding: 200px 0;
+}
+
+.password-forgot-title h1 {
+  font-size: 30px;
+  font-family: KotoriRose-Bold;
+  color: #444444;
+}
+
+.password-forgot-title h4 {
+  font-family: Mamelon-3HiRegular;
+  margin-top: 20px;
+  color: #777777;
+}
+
+.password-forgot-input {
+  padding: 50px 0;
+}
+
+.password-forgot-field {
+}
+
+.password-forgot-text {
+  margin-bottom: 10px;
+  color: #585858;
+}
+
+.password-forgot-inputarea {
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
+
+.password-forgot-actions {
+  margin-top: 80px;
+}
+
+.password-forgot-btn {
+  border: 1px solid rgba(255, 192, 75, 0.709);
+  border-radius: 3px;
+  background-color: rgba(255, 192, 75, 0.709);
+  color: white;
+}
+
+.password-forgot-btn:hover {
+  background-color:  rgb(255, 192, 75);
+}
+
+.password-forgot-links {
+  text-align: center;
+  padding-bottom: 50px;
+}
