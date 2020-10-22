@@ -3,7 +3,6 @@
 <img src="app/assets/images/alb-logo.png" width="70%">
 <br>
 <br>
-<br>
 
 # :book: Overview
 
@@ -28,7 +27,7 @@ Login Info (sample)
 # :movie_camera: Demo
 
 ### Home
-<img src="app/assets/images/hsy62-g1wfj.gif" width="50%">
+<img src="app/assets/images/hsy62-g1wfj.gif" width="60%">
 <details><summary>Describe</summary><div>
 
 - ルートパスに設定しているページ
@@ -40,7 +39,7 @@ Login Info (sample)
 <br>
 
 ### Login/SignUp view
-<img src="app/assets/images/xycre-6btq7.gif" width="50%">
+<img src="app/assets/images/xycre-6btq7.gif" width="60%">
 <details><summary>Describe</summary><div>
 
 - SNSアカウントでのログインが可能
@@ -49,7 +48,7 @@ Login Info (sample)
 <br>
 
 ### My Board
-<img src="app/assets/images/890od-2vkgz.gif" width="50%">
+<img src="app/assets/images/890od-2vkgz.gif" width="60%">
 <details><summary>Describe</summary><div>
 
 - ログインするとこちらのページへ遷移
@@ -61,7 +60,7 @@ Login Info (sample)
 <br>
 
 ### Post view
-<img src="app/assets/images/egdau-32hcs.gif)" width="50%">
+<img src="app/assets/images/egdau-32hcs.gif" width="60%">
 <details><summary>Describe</summary><div>
 
 - リストの投稿ができる
@@ -72,7 +71,7 @@ Login Info (sample)
 <br>
 
 ### Detail view
-<img src="app/assets/images/5f5x5-whvkv.gif" width="50%">
+<img src="app/assets/images/5f5x5-whvkv.gif" width="60%">
 <details><summary>Describe</summary><div>
 
 - 投稿したリストの詳細情報がモーダルウィンドウで表示される
@@ -82,7 +81,7 @@ Login Info (sample)
 <br>
 
 ### Edit/delete view
-<img src="app/assets/images/vtrll-i79l0.gif" width="50%">
+<img src="app/assets/images/vtrll-i79l0.gif" width="60%">
 <details><summary>Describe</summary><div>
 
 - リスト一覧で該当リストの右端にある•••に触れると編集と削除のリンクが出現する
