@@ -15,6 +15,7 @@ A-List Board
 一覧で見えることで、不要なアカウントの整理がしやすくなる。
 </details>
 <br>
+
 ### :pushpin: Production Environment
 
 https://www.a-list-board.com/
@@ -24,10 +25,8 @@ Login Info (sample)
 - Password：sample1
 <br>
 <br>
-<br>
 
 # :movie_camera: Demo
-<br>
 
 ### Home
 ![alt](app/assets/images/hsy62-g1wfj.gif)
@@ -93,7 +92,6 @@ Login Info (sample)
 </div></details>
 <br>
 <br>
-<br>
 
 # :rocket: Requirement
 <br>
@@ -116,10 +114,8 @@ Login Info (sample)
 - VScode
 <br>
 <br>
-<br>
 
 # :thought_balloon: Note
-<br>
 
 ### 工夫したポイント
 機能を絞って必要最低限のシンプルなアプリケーションにするようにした。  
@@ -135,7 +131,6 @@ Login Info (sample)
 - 編集画面を詳細モーダルと同じようなモーダルにする
 - 投稿画面についてもモーダルから可能にする</div></details>
 <details><summary>ドラッグ&ドロップでのリストの移動</summary>簡単に並び替えができるようにするため実装する</details>
-<br>
 <br>
 <br>
 
