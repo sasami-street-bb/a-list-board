@@ -2,17 +2,19 @@
 
 A-List Board
 ![alt](app/assets/images/alb-logo.png)
-
+<br>
+<br>
+<br>
 
 # :book: Overview
 
 サイトなどに登録している情報を管理するアプリケーション  
 
 <details><summary>制作背景（意図）</summary>
-自分がどれだけのサイトに登録しているのか、どのアドレスを使用しているのか一覧で確認できたら便利だと考え作成した。
+自分がどれだけのサイトに登録しているのか、どのアドレスを使用しているのか一覧で確認できたら便利だと考え作成した。  
 一覧で見えることで、不要なアカウントの整理がしやすくなる。
 </details>
-
+<br>
 ### :pushpin: Production Environment
 
 https://www.a-list-board.com/
@@ -20,10 +22,12 @@ https://www.a-list-board.com/
 Login Info (sample)
 - E-mail：sample@sample.com
 - Password：sample1
-
-
+<br>
+<br>
+<br>
 
 # :movie_camera: Demo
+<br>
 
 ### Home
 ![alt](app/assets/images/hsy62-g1wfj.gif)
@@ -33,14 +37,18 @@ Login Info (sample)
 - ページ下部にログインとサインアップのリンクがある
 - フッターにはサイトについて書かれた簡易的なページへのリンクがある
 - ログイン状態でこちらのページにいるとヘッダーにはMy Boardとログアウトのリンクが出現する
-</div></details>  
+</div></details>
+<br>
+<br>
 
 ### Login/SignUp view
 ![alt](app/assets/images/xycre-6btq7.gif)
 <details><summary>Describe</summary><div>
 
 - SNSアカウントでのログインが可能
-</div></details>  
+</div></details>
+<br>
+<br>
 
 ### My Board
 ![alt](app/assets/images/890od-2vkgz.gif)
@@ -50,7 +58,9 @@ Login Info (sample)
 - ヘッダーには投稿/ユーザー情報/ログアウトのリンクがある
 - 投稿されたリストが一覧表示される
 - 左右それぞれ無料/有料で別れて表示される
-</div></details>  
+</div></details>
+<br>
+<br>
 
 ### Post view
 ![alt](app/assets/images/egdau-32hcs.gif)
@@ -59,7 +69,9 @@ Login Info (sample)
 - リストの投稿ができる
 - 項目はタイトル/URL/メールアドレス/パスワード/料金形態/メモ
 - 必須となるのはタイトルと料金形態のみ
-</div></details>  
+</div></details>
+<br>
+<br>
 
 ### Detail view
 ![alt](app/assets/images/5f5x5-whvkv.gif)
@@ -67,7 +79,9 @@ Login Info (sample)
 
 - 投稿したリストの詳細情報がモーダルウィンドウで表示される
 - リストをクリックして表示し、モーダルが表示されたら×かマスク部分をクリックすると非表示になる
-</div></details>  
+</div></details>
+<br>
+<br>
 
 ### Edit/delete view
 ![alt](app/assets/images/vtrll-i79l0.gif)
@@ -76,10 +90,13 @@ Login Info (sample)
 - リスト一覧で該当リストの右端にある•••に触れると編集と削除のリンクが出現する
 - 詳細画面の右上にも編集と削除のリンクアイコンがある
 - 編集画面は投稿画面と変わらず、削除リンクを踏むと確認ダイアログが出現する
-</div></details>  
-
+</div></details>
+<br>
+<br>
+<br>
 
 # :rocket: Requirement
+<br>
 
 - Ruby 2.6.5
 - Ruby on Rails 6.0.0
@@ -88,20 +105,26 @@ Login Info (sample)
 - PHP
 - jQuery 4.4.0
 - Bootstrap 4.5.2  
+<br>
 
 - MySQL / Sequel Pro / MariaDB
 - AWS(EC2) / Capistrano / nginx / unicorn
 - GitHub / GitHubDesktop
 - RSpec  
+<br>
 
 - VScode
-
+<br>
+<br>
+<br>
 
 # :thought_balloon: Note
+<br>
 
 ### 工夫したポイント
-機能を絞って必要最低限のシンプルなアプリケーションにするようにした。
-使用者が使いやすいように非同期での表示をするようにした。  
+機能を絞って必要最低限のシンプルなアプリケーションにするようにした。  
+使用者が使いやすいように非同期での表示をするようにした。
+<br>
 
 ### To Do
 <details><summary>アカウント削除を物理削除ではなく論理削除にする</summary>一度削除したユーザーが再度同じメールアドレスでの登録も可能にさせる</details>
@@ -112,7 +135,9 @@ Login Info (sample)
 - 編集画面を詳細モーダルと同じようなモーダルにする
 - 投稿画面についてもモーダルから可能にする</div></details>
 <details><summary>ドラッグ&ドロップでのリストの移動</summary>簡単に並び替えができるようにするため実装する</details>
-
+<br>
+<br>
+<br>
 
 # :clipboard: Tables
 
@@ -127,6 +152,8 @@ Login Info (sample)
 ### Association
 
 - has_many :lists
+<br>
+<br>
 
 ## lists
 
@@ -143,6 +170,8 @@ Login Info (sample)
 
 - belongs_to :users
 - has_one :subscriptions
+<br>
+<br>
 
 ## subscriptions
 
