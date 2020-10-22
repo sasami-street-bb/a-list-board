@@ -10,8 +10,8 @@ class User < ApplicationRecord
     validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]{6,100}+\z/i }, on: :create
   end
 
-  has_many :lists
-  has_many :sns_credentials
+  has_many :lists, dependent: :destroy
+  has_many :sns_credentials, dependent: :destroy
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
