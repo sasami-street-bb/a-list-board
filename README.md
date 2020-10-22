@@ -1,4 +1,4 @@
-# :name_badge: Name
+# :bookmark: Name
 
 <img src="app/assets/images/alb-logo.png" width="70%">
 <br>
@@ -26,7 +26,7 @@ Login Info (sample)
 
 # :movie_camera: Demo
 
-### Home
+### :heavy_check_mark: Home
 <img src="app/assets/images/hsy62-g1wfj.gif" width="60%">
 <details><summary>Describe</summary><div>
 
@@ -38,7 +38,7 @@ Login Info (sample)
 <br>
 <br>
 
-### Login/SignUp view
+### :heavy_check_mark: Login/SignUp view
 <img src="app/assets/images/xycre-6btq7.gif" width="60%">
 <details><summary>Describe</summary><div>
 
@@ -47,19 +47,19 @@ Login Info (sample)
 <br>
 <br>
 
-### My Board
+### :heavy_check_mark: My Board
 <img src="app/assets/images/890od-2vkgz.gif" width="60%">
 <details><summary>Describe</summary><div>
 
 - ログインするとこちらのページへ遷移
 - ヘッダーには投稿/ユーザー情報/ログアウトのリンクがある
-- 投稿されたリストが一覧表示される
+- 投稿されたユーザーIDと紐付くリストが一覧表示される
 - 左右それぞれ無料/有料で別れて表示される
 </div></details>
 <br>
 <br>
 
-### Post view
+### :heavy_check_mark: Post view
 <img src="app/assets/images/egdau-32hcs.gif" width="60%">
 <details><summary>Describe</summary><div>
 
@@ -70,7 +70,7 @@ Login Info (sample)
 <br>
 <br>
 
-### Detail view
+### :heavy_check_mark: Detail view
 <img src="app/assets/images/5f5x5-whvkv.gif" width="60%">
 <details><summary>Describe</summary><div>
 
@@ -80,7 +80,7 @@ Login Info (sample)
 <br>
 <br>
 
-### Edit/delete view
+### :heavy_check_mark: Edit/delete view
 <img src="app/assets/images/vtrll-i79l0.gif" width="60%">
 <details><summary>Describe</summary><div>
 
@@ -119,6 +119,7 @@ Login Info (sample)
 機能を絞って必要最低限のシンプルなアプリケーションにするようにした。  
 使用者が使いやすいように非同期での表示をするようにした。
 <br>
+<br>
 
 ### To Do
 <details><summary>アカウント削除を物理削除ではなく論理削除にする</summary>一度削除したユーザーが再度同じメールアドレスでの登録も可能にさせる</details>
@@ -145,6 +146,20 @@ Login Info (sample)
 ### Association
 
 - has_many :lists
+- has_many :sns_credentials
+<br>
+
+## sns_credentials
+
+| Column   | Type       | Options           |
+| -------- | ---------- | ----------------- |
+| provider | string     |                   |
+| uid      | string     |                   |
+| user     | references | foreign_key: true |
+
+### Association
+
+- belongs_to :user
 <br>
 
 ## lists
