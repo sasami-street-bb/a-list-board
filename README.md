@@ -98,7 +98,6 @@ Login Info (sample)
 - Ruby on Rails 6.0.0
 - HTML 5
 - CSS
-- PHP
 - jQuery 4.4.0
 - Bootstrap 4.5.2  
 <br>
